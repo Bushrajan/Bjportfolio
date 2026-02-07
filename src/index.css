@@ -1,0 +1,503 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/********* scrollbar css ************/
+::-webkit-scrollbar {
+  width: 3px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #696969 !important;
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+  transition: transform 0.9s linear, background-color 0.9s linear;
+}
+
+
+@layer base {
+  :root {
+    /* Blue theme (default) */
+    --primary-50: #eff6ff;
+    --primary-100: #dbeafe;
+    --primary-200: #bfdbfe;
+    --primary-300: #93c5fd;
+    --primary-400: #60a5fa;
+    --primary-500: #3b82f6;
+    --primary-600: #2563eb;
+    --primary-700: #1d4ed8;
+    --primary-800: #1e40af;
+    --primary-900: #1e3a8a;
+    --primary-950: #172554;
+
+    --secondary-50: #f5f3ff;
+    --secondary-100: #ede9fe;
+    --secondary-200: #ddd6fe;
+    --secondary-300: #c4b5fd;
+    --secondary-400: #a78bfa;
+    --secondary-500: #8b5cf6;
+    --secondary-600: #7c3aed;
+    --secondary-700: #6d28d9;
+    --secondary-800: #5b21b6;
+    --secondary-900: #4c1d95;
+    --secondary-950: #2e1065;
+
+    --accent-50: #f0fdfa;
+    --accent-100: #ccfbf1;
+    --accent-200: #99f6e4;
+    --accent-300: #5eead4;
+    --accent-400: #2dd4bf;
+    --accent-500: #14b8a6;
+    --accent-600: #0d9488;
+    --accent-700: #0f766e;
+    --accent-800: #115e59;
+    --accent-900: #134e4a;
+    --accent-950: #042f2e;
+  }
+
+  [data-theme="purple"] {
+    --primary-50: #faf5ff;
+    --primary-100: #f3e8ff;
+    --primary-200: #e9d5ff;
+    --primary-300: #d8b4fe;
+    --primary-400: #c084fc;
+    --primary-500: #a855f7;
+    --primary-600: #9333ea;
+    --primary-700: #7e22ce;
+    --primary-800: #6b21a8;
+    --primary-900: #581c87;
+    --primary-950: #3b0764;
+  }
+
+  [data-theme="green"] {
+    --primary-50: #f0fdf4;
+    --primary-100: #dcfce7;
+    --primary-200: #bbf7d0;
+    --primary-300: #86efac;
+    --primary-400: #4ade80;
+    --primary-500: #22c55e;
+    --primary-600: #16a34a;
+    --primary-700: #15803d;
+    --primary-800: #166534;
+    --primary-900: #14532d;
+    --primary-950: #052e16;
+  }
+
+  [data-theme="red"] {
+    --primary-50: #fef2f2;
+    --primary-100: #fee2e2;
+    --primary-200: #fecaca;
+    --primary-300: #fca5a5;
+    --primary-400: #f87171;
+    --primary-500: #ef4444;
+    --primary-600: #dc2626;
+    --primary-700: #b91c1c;
+    --primary-800: #991b1b;
+    --primary-900: #7f1d1d;
+    --primary-950: #450a0a;
+  }
+
+  [data-theme="orange"] {
+    --primary-50: #fff7ed;
+    --primary-100: #ffedd5;
+    --primary-200: #fed7aa;
+    --primary-300: #fdba74;
+    --primary-400: #fb923c;
+    --primary-500: #f97316;
+    --primary-600: #ea580c;
+    --primary-700: #c2410c;
+    --primary-800: #9a3412;
+    --primary-900: #7c2d12;
+    --primary-950: #431407;
+  }
+
+  [data-theme="pink"] {
+    --primary-50: #fdf2f8;
+    --primary-100: #fce7f3;
+    --primary-200: #fbcfe8;
+    --primary-300: #f9a8d4;
+    --primary-400: #f472b6;
+    --primary-500: #ec4899;
+    --primary-600: #db2777;
+    --primary-700: #be185d;
+    --primary-800: #9d174d;
+    --primary-900: #831843;
+    --primary-950: #500724;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-serif bg-white text-dark-800 dark:text-white dark:bg-dark-800;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold leading-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-2xl;
+  }
+
+  h4 {
+    @apply text-2xl md:text-2xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom2 {
+    @apply  px-2 mx-auto sm:px-4 lg:px-3 ;
+  }
+
+  .container-custom {
+    @apply container px-4 mx-auto sm:px-6 lg:px-2 max-w-7xl;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-title {
+    @apply mb-2 text-3xl font-bold md:text-4xl text-primary-600 dark:text-primary-400;
+  }
+
+  .section-subtitle {
+    @apply max-w-2xl mb-12 text-lg text-dark-500 dark:text-dark-100;
+  }
+
+  .btn {
+    @apply px-6 py-3 font-medium transition-all duration-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply text-white bg-primary-600 hover:bg-primary-700 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply text-white bg-secondary-600 hover:bg-secondary-700 focus:ring-secondary-500;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500;
+  }
+
+  .card {
+    @apply p-6 transition-all duration-300 bg-white shadow-lg dark:bg-dark-700 rounded-xl;
+  }
+
+  .glassmorphism {
+    @apply border bg-white/10 backdrop-blur-md border-white/20 dark:bg-dark-800/50 dark:border-dark-700/50;
+  }
+}
+
+
+/* ******************Cursor***********************/
+body {
+  cursor: url('silver-cursor.png') 10 10, auto !important;
+}
+
+
+a,
+span,
+button {
+  cursor: url('silver-pointer.png') 10 10, auto !important;
+}
+
+a img {
+  cursor: url('silver-pointer.png') 10 10, auto !important;
+}
+
+.cursor-pointer {
+  cursor: url('silver-pointer.png') 10 10, auto !important;
+}
+
+/* ********************3D box*********************** */
+ 
+
+
+.text {
+    font-weight: bold;
+    font-family: Arial;
+    text-transform: uppercase;
+}
+
+.container {
+    perspective: 600px;
+}
+
+.cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: spin_spin 18s linear infinite;
+    animation-direction:alternate-reverse;
+}
+
+.cube__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    background-color: transparent;
+    box-shadow: inset 0 0 100px #02203c;
+    outline: 1px solid #02203c;
+}
+
+.cube__face img {
+  max-width: 100%;
+}
+
+.cube-face--left {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+.cube-face--front {
+    transform: rotateY(0deg) translateZ(150px);
+}
+.cube-face--back {
+    transform: rotateY(180deg) translateZ(150px);
+}
+.cube-face--right {
+    transform: rotateY(90deg) translateZ(150px);
+}
+.cube-face--top {
+    transform: rotateX(90deg) translateZ(150px);
+}
+.cube-face--bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+.shadow {
+    outline: none;
+    background: rgba(0,0,0,0);
+    box-shadow: 0 0 100px #000;
+}
+
+@keyframes spin_spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+
+/* ******************modal***********************/
+.modal{
+  padding: 20px;
+  z-index: 5000;
+}
+
+
+/* ******************blur-container***********************/
+.blur-container {
+  background: rgba(174, 171, 171, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset !important;
+}
+
+/* ******************** dp logo ************ */
+.dpimage-container {
+  height: 550px;
+  width: 100%;
+  background-color: #00000000;
+  overflow: hidden;
+  margin: 0 auto !important;
+  /* background: url("/public/background-of-dp.png"); */
+  background: url("back.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.box {
+  width: 500px !important;
+  height: 500px !important;
+  position: relative;
+  padding: 0 0px;
+  margin: 0 auto !important;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    transform: scale(1.42);
+  }
+}
+
+.spin-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  animation: spin 12s ease-in-out infinite alternate;
+  position: relative;
+}
+
+.shape {
+  width: 100% !important;
+  height: 100% !important;
+  transition: border-radius 1s ease-out;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 12s ease-in-out infinite both alternate;
+  position: absolute;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.bd {
+  width: 142% !important;
+  height: 142% !important;
+  left: -21% !important;
+  top: -21% !important;
+  position: absolute !important;
+  background: url("/logo.png");
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  animation: spin 12s ease-in-out infinite alternate-reverse !important;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+  }
+
+  100% {
+    border-radius: 40% 60%;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.aboutme {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-img {
+  width: 400px !important;
+  height: 200px !important;
+}
+
+.hero-container {
+  padding-top: 5px;
+  flex-wrap: wrap;
+  height: 800px !important;
+}
+
+
+@media (max-width: 1025px) {
+
+  .aboutme,
+  .aboutme1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  header {
+    width: 100%;
+    height: 100px;
+    padding-top: 25px !important;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .dpimage-container {
+    height: 500px;
+    background: url("back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
+  .hero-container {
+    padding-top: 5px;
+    flex-wrap: wrap;
+    height: 1200px !important;
+  }
+
+  .footer {
+    text-align: center !important;
+  }
+
+  .footerlinks {
+    justify-content: center;
+
+  }
+}
+
+@media (max-width: 550px) {
+  .dpimage-container {
+    height: 350px;
+  }
+
+  review-img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+
+  .box {
+    padding: 10px !important;
+    width: 43vmax !important;
+    height: 43vmax !important;
+  }
+}
+
